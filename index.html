@@ -35,10 +35,16 @@
     <div class="guess">Guess 7</div>
   </section>
 
-  <form id="letter-form">
-    <label for="letter-input">Guess a letter:</label>
-    <input type="text" id="letter-input" name="letter">
-    <button type="submit">GO</button>
+  <form>
+    <label for="letter-input">(P1) Input a word:</label>
+    <input type="text" id="wordToGuess" name="letter">
+    <button type="submit" onclick = "getWordToGuess()">GO</button>
+  </form>
+  
+  <form>
+    <label for="letter-input">(P2) Guess a letter:</label>
+    <input type="text" id="letterToGuess" name="letter">
+    <button type="submit" onclick = "getLetterToGuess()">GO</button>
   </form>
 
   <section id="graveyard">

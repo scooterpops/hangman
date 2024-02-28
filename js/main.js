@@ -1,33 +1,28 @@
-/*----- constants -----*/
+// /*----- constants -----*/
 
 
-/*----- app's state (variables) -----*/
-playerOneWord = [ , , , , , ,]
+// /*----- app's state (variables) -----*/
+// playerOneWord = [ , , , , , ,]
 
-playerTwoGuessLetter = 
-// 1, 2?
+// playerTwoGuessLetter = 
+// // 1, 2?
 
-playerTwoFinalWord = 
+// playerTwoFinalWord = 
 
-letterArray = []
-guessArray = []
-usedArray = []
+// letterArray = []
+// guessArray = []
+// usedArray = []
 
-/*----- cached element references -----*/
-
-
-/*----- event listeners -----*/
-when letter guessed, show letter
-when word guessed, show green check
-when out of guesses AND word not guessed, show red x
-
-/*----- functions -----*/
-function renderMessage() {
+// /*----- cached element references -----*/
 
 
+// /*----- event listeners -----*/
+// when letter guessed, show letter
+// when word guessed, show green check
+// when out of guesses AND word not guessed, show red x
 
-
-
+// /*----- functions -----*/
+// function renderMessage() {
 
 
 // player1 enters hiddenWord
@@ -44,25 +39,67 @@ function renderMessage() {
 
 
 
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     // app state variables
+//     let wordToGuess = "hangman"; // this should be replaced
+//     let guessesLeft = 7;
+//     let guessedLetters = [];
+// }
+
+// function displayGameState() {
+//     // display number of guesses left
+//     document.querySelector('.counter').textContent = guessesLeft;
+
+//     // display guessed letters
+//     document.querySelector('#guesses').innerHTML = guessedLetters.map(letter => `<div class="guess">${letter}</div>`).join('');
+
+
+    // 1) player1 inputs word, store word
+            // 1a) hide word
+    // 2) player2 guesses letter1. if guess1 = letter1, reveal letter1. else reduce # of guesses left by 1.
+    // 3) if letter1 is successfully guessed, reveal letter1. next guess is for letter2 and so on.
+    // 4) game continues until either a) wordToGuess is revealed while guessesLeft > 0, or b) guessesLeft = 0 and wordToGuess is unrevealed
+
+// cache Form , store variable 
+
+
+
 /*----- constants -----*/
-hiddenWord, hangmanBodyPart1, hangmanBodyPart2, etc., 
+
 
 /*----- state variables -----*/
-letter1, letter2, etc., maxLetters, hangmanBodyPart1Reveal, hangmanBodyPart2Reveal, etc.
-hangmanDeathReveal, guessLetter
+let wordToGuess
+let letterToGuess
+let wordToGuessArray =[]
+
 
 /*----- cached elements  -----*/
-hangmanBodyPartsHidden?
-hiddenCorrectLetter1, hiddenCorrectLetter2, etc
+const wordToGuessInput = document.querySelector('#wordToGuess')
+const letterToGuessInput = document.querySelector('#letterToGuess')
+
 
 /*----- event listeners -----*/
-when successful letter guessed, move arrow for next guess over to adjacent letter
-when game lost, reveal hangmanDeath
-when game won, reveal winningMessage
+
 
 /*----- functions -----*/
-gameWin
-gameLose
-successfulLetterGuess
-unsuccessfulLetterGuess
-revealBodyPart
+function getWordToGuess() {
+    wordToGuess = wordToGuessInput.value
+    console.log(wordToGuess)
+    wordToArray()
+}
+
+function getLetterToGuess() {
+    letterToGuess = letterToGuessInput.value
+    console.log(letterToGuess)
+}
+
+function wordToArray() {
+    wordToGuessArray = wordToGuess.split("")
+    console.log(wordToGuessArray)
+}
+
