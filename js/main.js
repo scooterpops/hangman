@@ -59,7 +59,7 @@
 //     document.querySelector('#guesses').innerHTML = guessedLetters.map(letter => `<div class="guess">${letter}</div>`).join('');
 
 
-    // 1) player1 inputs word, store word
+    // 1) player1 inputs word, store word as array
             // 1a) hide word
     // 2) player2 guesses letter1. if guess1 = letter1, reveal letter1. else reduce # of guesses left by 1.
     // 3) if letter1 is successfully guessed, reveal letter1. next guess is for letter2 and so on.
@@ -76,17 +76,23 @@
 let wordToGuess
 let letterToGuess
 let wordToGuessArray =[]
+let guessesLeft = 6
 
 
 /*----- cached elements  -----*/
 const wordToGuessInput = document.querySelector('#wordToGuess')
 const letterToGuessInput = document.querySelector('#letterToGuess')
-
+const guessesLeftElement = document.querySelector('.counter')
 
 /*----- event listeners -----*/
 
 
 /*----- functions -----*/
+init()
+function init() {
+    updateGuessesLeft()
+}
+
 function getWordToGuess() {
     wordToGuess = wordToGuessInput.value
     console.log(wordToGuess)
@@ -102,4 +108,9 @@ function wordToArray() {
     wordToGuessArray = wordToGuess.split("")
     console.log(wordToGuessArray)
 }
+
+function updateGuessesLeft() {
+    guessesLeftElement.innerHTML = guessesLeft
+}
+
 
