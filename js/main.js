@@ -6,8 +6,8 @@ let letterToGuess
 let wordToGuessArray = []
 let mistakesLeft = 5
 let mistakesMade = 0
-
 let lettersGuessedArray =[]
+
 
 document.querySelector('.counter').innerText = mistakesLeft
 
@@ -35,6 +35,9 @@ function getWordToGuess() {
 function checkLetterToGuess() {
     letterToGuess = letterToGuessInput.value.toUpperCase()
     console.log(letterToGuess)
+    if (!lettersGuessedArray.includes(letterToGuess)) {
+        lettersGuessedArray.push(letterToGuess);
+    } 
     if (wordToGuessArray.includes(letterToGuess)){
         console.log("true")
         wordToGuessArray.forEach(function(letter, idx) {
@@ -49,14 +52,28 @@ function checkLetterToGuess() {
         mistakesLeft--
         document.querySelector('.counter').innerText = mistakesLeft
     }
+
     console.log(wordToGuess)
     console.log(mistakesLeft)
     console.log(mistakesMade)
     console.log(wordToGuessArray)
+    console.log(lettersGuessedArray)
+
+    function checkWinner(wordToGuessArray, lettersGuessedArray) {
+        return wordToGuessArray.every(element => lettersGuessedArray.includes(element));
+      }
+      if (checkWinner(wordToGuessArray, lettersGuessedArray)) {
+        console.log("P1 WINS");
+      } else {
+        console.log("NO WINNER YET");
+      }     
 }
 
-function getWinner() {
-}
+
+
+
+
+
 
 
 
@@ -69,4 +86,4 @@ function getWinner() {
 // function updateGuessesLeft() {
 //     guessesLeftElement.innerHTML = guessesLeft
 //     console.log(guessesLeftElement)
-// }
+//
