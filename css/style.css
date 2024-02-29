@@ -1,10 +1,17 @@
 header {
+  display: flex;
   font-size: 6.5vmin;
   color: red;
   letter-spacing: 0.5vmin;
   text-align: center;
   margin-bottom: 10px;
   margin-top: 10px;
+}
+
+.counter-wrapper {
+  display: flex;
+  align-items: center;
+  height: 70px;
 }
 
 body {
@@ -21,12 +28,6 @@ h1 {
   flex-wrap: wrap;
   min-height: 100vh;
   margin: 0;
-}
-
-.counter-wrapper {
-  display: flex;
-  align-items: center;
-  height: 70px;
 }
 
 .counter {
@@ -110,4 +111,26 @@ h1 {
   font-weight: bold;
   gap: 10px;
   margin-top: 20px;
+}
+
+#blackout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.8;
+  z-index: 9999; 
+}
+
+#win-message {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: yellow;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
 }

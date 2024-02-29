@@ -8,13 +8,13 @@ let mistakesLeft = 5
 let mistakesMade = 0
 let lettersGuessedArray =[]
 
-
 document.querySelector('.counter').innerText = mistakesLeft
 
 /*----- cached elements  -----*/
 const wordToGuessInput = document.querySelector('#wordToGuess')
 const letterToGuessInput = document.querySelector('#letterToGuess')
 const guessesLeftElement = document.querySelector('.counter')
+const showPlayerTwoWinner = document.querySelector()
 
 /*----- event listeners -----*/
 
@@ -63,13 +63,11 @@ function checkLetterToGuess() {
         return wordToGuessArray.every(element => lettersGuessedArray.includes(element));
       }
       if (checkWinner(wordToGuessArray, lettersGuessedArray)) {
-        console.log("P1 WINS");
+        console.log("P2 WINS");
       } else {
         console.log("NO WINNER YET");
       }     
 }
-
-
 
 
 
