@@ -6,6 +6,9 @@ let letterToGuess
 let wordToGuessArray = []
 let mistakesLeft = 5
 let mistakesMade = 0
+
+let lettersGuessedArray =[]
+
 document.querySelector('.counter').innerText = mistakesLeft
 
 /*----- cached elements  -----*/
@@ -20,7 +23,6 @@ const guessesLeftElement = document.querySelector('.counter')
 // init()
 
 function init() {
-    updateGuessesLeft()
 }
 
 function getWordToGuess() {
@@ -31,7 +33,6 @@ function getWordToGuess() {
 }
 
 function checkLetterToGuess() {
-    console.log(wordToGuessArray)
     letterToGuess = letterToGuessInput.value.toUpperCase()
     console.log(letterToGuess)
     if (wordToGuessArray.includes(letterToGuess)){
@@ -48,7 +49,17 @@ function checkLetterToGuess() {
         mistakesLeft--
         document.querySelector('.counter').innerText = mistakesLeft
     }
+    console.log(wordToGuess)
+    console.log(mistakesLeft)
+    console.log(mistakesMade)
+    console.log(wordToGuessArray)
 }
+
+function getWinner() {
+}
+
+
+
 
 // function getLetterToGuess() {
 //     letterToGuess = letterToGuessInput.value
@@ -59,6 +70,3 @@ function checkLetterToGuess() {
 //     guessesLeftElement.innerHTML = guessesLeft
 //     console.log(guessesLeftElement)
 // }
-
-
-
