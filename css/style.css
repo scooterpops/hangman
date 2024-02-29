@@ -4,6 +4,7 @@ header {
   letter-spacing: 0.5vmin;
   text-align: center;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 body {
@@ -11,8 +12,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
 }
 
 h1 {
@@ -20,14 +19,14 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  min-height: 5vh;
+  min-height: 100vh;
   margin: 0;
 }
 
 .counter-wrapper {
   display: flex;
   align-items: center;
-  height: 170px;
+  height: 70px;
 }
 
 .counter {
@@ -36,14 +35,16 @@ h1 {
 }
 
 #letters { 
+  font-size: 3.6rem;
   display: flex; 
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
   width: 800px;
-  height: 70px;
-  gap: 5px;
+  height: 270px;
+  gap: 10px;
+  margin-bottom: 25px;
+  margin-top: 20px;
 }
 
 .letter {
@@ -55,9 +56,17 @@ h1 {
   height: 100px;
   background-color: lightgrey;
   font-weight: bold;
+
 }
 
-#guesses { 
+#letter-form {
+  height: 40px;
+  color: green;
+  /* margin-top: 20px; */
+  /* margin-bottom: 20px; */
+}
+
+/* #guesses { 
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -66,7 +75,7 @@ h1 {
   width: 800px;
   height: 300px;
   gap: 5px;
-} 
+}  */
 
 /* .guess {
   display: flex;
@@ -79,20 +88,15 @@ h1 {
   font-weight: bold;
 } */
 
-#letter-form {
-  height: 40px;
-  color: green;
-}
-
 #graveyard { 
   display: flex; 
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
   width: 800px;
   height: 70px;
-  gap: 5px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .grave {
@@ -104,4 +108,6 @@ h1 {
   height: 50px;
   background-color: darkgrey;
   font-weight: bold;
+  gap: 10px;
+  margin-top: 20px;
 }
