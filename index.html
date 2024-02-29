@@ -12,39 +12,39 @@
   
   <div class="counter-wrapper">
     <h1># of Guesses Left = </h1>
-    <div class="counter">7</div>
+    <div class="counter"></div>
   </div>
   
   <section id="letters">
-    <div class="letter">Letter 1</div> 
-    <div class="letter">Letter 2</div>
-    <div class="letter">Letter 3</div>
-    <div class="letter">Letter 4</div>
-    <div class="letter">Letter 5</div>
-    <div class="letter">Letter 6</div>
-    <div class="letter">Letter 7</div>
+    <div class="letter" id="l0">Letter 1</div> 
+    <div class="letter" id="l1">Letter 2</div>
+    <div class="letter" id="l2">Letter 3</div>
+    <div class="letter" id="l3">Letter 4</div>
+    <div class="letter" id="l4">Letter 5</div>
+    <div class="letter" id="l5">Letter 6</div>
+    <div class="letter" id="l6">Letter 7</div>
   </section>
 
   <section id="guesses">
-    <div class="guess">Guess 1</div>
-    <div class="guess">Guess 2</div>
-    <div class="guess">Guess 3</div>
-    <div class="guess">Guess 4</div>
-    <div class="guess">Guess 5</div>
-    <div class="guess">Guess 6</div>
-    <div class="guess">Guess 7</div>
+    <div class="guess" id="g0">Guess 1</div>
+    <div class="guess" id="g1">Guess 2</div>
+    <div class="guess" id="g2">Guess 3</div>
+    <div class="guess" id="g3">Guess 4</div>
+    <div class="guess" id="g4">Guess 5</div>
+    <div class="guess" id="g5">Guess 6</div>
+    <div class="guess" id="g6">Guess 7</div>
   </section>
 
-  <form>
+  <form id="letter-form">
     <label for="letter-input">(P1) Input a word:</label>
-    <input type="text" id="wordToGuess" name="letter">
-    <button type="submit" onclick = "getWordToGuess()">GO</button>
+    <input type="text" id="wordToGuess" name="word">
+    <button type="button" onclick="getWordToGuess()">GO</button>
   </form>
   
-  <form>
+  <form id="letter-form">
     <label for="letter-input">(P2) Guess a letter:</label>
     <input type="text" id="letterToGuess" name="letter">
-    <button type="submit" onclick = "getLetterToGuess()">GO</button>
+    <button type="button" onclick="checkLetterToGuess()">GO</button>
   </form>
 
   <section id="graveyard">

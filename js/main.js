@@ -36,14 +36,7 @@
 
 // if player2 correctly reveals all letters (and thus the hidden word) BEFORE all body parts are revealed, player2 wins
 //     else player1 wins (try and add hangmanDeath animation? or just reveal all body parts w/ finalBodyPart = xEyes)
-
-
-
-
-
-
-
-
+   
 // document.addEventListener('DOMContentLoaded', function() {
 //     // app state variables
 //     let wordToGuess = "hangman"; // this should be replaced
@@ -59,24 +52,33 @@
 //     document.querySelector('#guesses').innerHTML = guessedLetters.map(letter => `<div class="guess">${letter}</div>`).join('');
 
 
-    // 1) player1 inputs word, store word as array
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 1) player1 inputs word, store word as array DONE
             // 1a) hide word
-    // 2) player2 guesses letter1. if guess1 = letter1, reveal letter1. else reduce # of guesses left by 1.
-    // 3) if letter1 is successfully guessed, reveal letter1. next guess is for letter2 and so on.
-    // 4) game continues until either a) wordToGuess is revealed while guessesLeft > 0, or b) guessesLeft = 0 and wordToGuess is unrevealed
-
-// cache Form , store variable 
-
-
+// 2) player2 guesses letter1. if guess1 = letter1, reveal letter1. else move guess1 to used 1 & reduce # of guesses left by 1.
+// 3) if letter1 is successfully guessed, reveal letter1. next guess is for letter2 and so on.
+// 4) game continues until either a) wordToGuess is revealed while guessesLeft > 0, or b) guessesLeft = 0 and wordToGuess is unrevealed
 
 /*----- constants -----*/
-
 
 /*----- state variables -----*/
 let wordToGuess
 let letterToGuess
-let wordToGuessArray =[]
-let guessesLeft = 6
+let wordToGuessArray = []
+let guessesLeft = 7
 
 
 /*----- cached elements  -----*/
@@ -87,16 +89,37 @@ const guessesLeftElement = document.querySelector('.counter')
 /*----- event listeners -----*/
 
 
+
 /*----- functions -----*/
-init()
+
+// init()
+
 function init() {
     updateGuessesLeft()
 }
 
 function getWordToGuess() {
-    wordToGuess = wordToGuessInput.value
+    wordToGuess = wordToGuessInput.value.toUpperCase()
     console.log(wordToGuess)
-    wordToArray()
+    wordToGuessArray = wordToGuess.split("")
+    console.log(wordToGuessArray)
+}
+
+function checkLetterToGuess() {
+    console.log(wordToGuessArray)
+    letterToGuess = letterToGuessInput.value.toUpperCase()
+    console.log(letterToGuess)
+    if (wordToGuessArray.includes(letterToGuess)){
+        console.log("true")
+        wordToGuessArray.forEach(function(letter, idx) {
+            if (letter === letterToGuess) {
+            document.getElementById('l' + idx).innerText = letter.toUpperCase()   // this is where i need to change the innertext to the letter//
+            } 
+        })
+    } else {
+        console.log("false")
+
+}
 }
 
 function getLetterToGuess() {
@@ -104,13 +127,10 @@ function getLetterToGuess() {
     console.log(letterToGuess)
 }
 
-function wordToArray() {
-    wordToGuessArray = wordToGuess.split("")
-    console.log(wordToGuessArray)
-}
-
 function updateGuessesLeft() {
     guessesLeftElement.innerHTML = guessesLeft
+    console.log(guessesLeftElement)
 }
+
 
 
