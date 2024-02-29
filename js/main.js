@@ -9,12 +9,13 @@ let mistakesMade = 0
 let lettersGuessedArray =[]
 
 document.querySelector('.counter').innerText = mistakesLeft
+// document.querySelector('#blackout').innerHTML = 
 
 /*----- cached elements  -----*/
 const wordToGuessInput = document.querySelector('#wordToGuess')
 const letterToGuessInput = document.querySelector('#letterToGuess')
 const guessesLeftElement = document.querySelector('.counter')
-const showPlayerTwoWinner = document.querySelector()
+
 
 /*----- event listeners -----*/
 
@@ -64,15 +65,21 @@ function checkLetterToGuess() {
       }
       if (checkWinner(wordToGuessArray, lettersGuessedArray)) {
         console.log("P2 WINS");
-      } else {
-        console.log("NO WINNER YET");
-      }     
+        let blackout = document.getElementById("blackout")
+        blackout.classList.remove("hide")
+        blackout.classList.add("blackout")
+        document.querySelector(".win-message").innerText = "P2 WINS"
+       } else if (mistakesLeft === 0) {
+        console.log("P1 WINS");
+        let blackout = document.getElementById("blackout")
+        blackout.classList.remove("hide")
+        blackout.classList.add("blackout")
+        document.querySelector(".win-message").innerText = "P1 WINS"
+       }
+        else {console.log("NO WINNER YET");
+
+       } 
 }
-
-
-
-
-
 
 
 
