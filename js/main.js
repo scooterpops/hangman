@@ -78,7 +78,9 @@
 let wordToGuess
 let letterToGuess
 let wordToGuessArray = []
-let guessesLeft = 7
+let mistakesLeft = 5
+let mistakesMade = 0
+document.querySelector('.counter').innerText = mistakesLeft
 
 
 /*----- cached elements  -----*/
@@ -113,12 +115,15 @@ function checkLetterToGuess() {
         console.log("true")
         wordToGuessArray.forEach(function(letter, idx) {
             if (letter === letterToGuess) {
-            document.getElementById('l' + idx).innerText = letter.toUpperCase()   // this is where i need to change the innertext to the letter//
-            } 
+            document.getElementById('l' + idx).innerText = letter.toUpperCase()
+            }
         })
     } else {
         console.log("false")
-
+        document.getElementById('v' + mistakesMade).innerText = letterToGuess.toUpperCase()
+        mistakesMade++
+        mistakesLeft--
+        document.querySelector('.counter').innerText = mistakesLeft
 }
 }
 

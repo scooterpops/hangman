@@ -68,7 +68,7 @@ h1 {
   gap: 5px;
 } 
 
-.guess {
+/* .guess {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +77,7 @@ h1 {
   height: 100px;
   background-color: lightgrey;
   font-weight: bold;
-}
+} */
 
 #letter-form {
   height: 40px;
