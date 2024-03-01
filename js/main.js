@@ -26,7 +26,14 @@ function getWordToGuess() {
     wordToGuess = wordToGuessInput.value.toUpperCase()
     console.log(wordToGuess)
     wordToGuessArray = wordToGuess.split("")
+    wordToGuessInput.value = ''
     console.log(wordToGuessArray)
+    
+    if (wordToGuessArray.length < 7) {
+        for (let i = 6; i >= wordToGuessArray.length; i--) {
+        document.getElementById('l' + i).innerText = '-'
+        }
+    }
 }
 
 function checkLetterToGuess() {
