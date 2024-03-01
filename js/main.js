@@ -27,6 +27,7 @@ function getWordToGuess() {
     console.log(wordToGuess)
     wordToGuessArray = wordToGuess.split("")
     wordToGuessInput.value = ''
+    wordToGuessInput.disabled = true
     console.log(wordToGuessArray)
     
     if (wordToGuessArray.length < 7) {
