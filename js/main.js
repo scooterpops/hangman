@@ -59,6 +59,8 @@ function checkLetterToGuess() {
         document.querySelector('.counter').innerText = mistakesLeft
     }
 
+    letterToGuessInput.value = ''
+
     console.log(wordToGuess)
     console.log(mistakesLeft)
     console.log(mistakesMade)
