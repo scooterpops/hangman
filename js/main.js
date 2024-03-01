@@ -5,7 +5,6 @@ let lettersGuessedArray =[]
 let mistakesLeft = 5
 let mistakesMade = 0
 
-
 document.querySelector('.counter').innerText = mistakesLeft
 
 const wordToGuessInput = document.querySelector('#wordToGuess')
